@@ -3,6 +3,7 @@ const geoIpv2 = "http://api.ipapi.com/api";
 const phoneValid = "https://api.apilayer.com/number_verification/validate";
 const validEmail = "https://api.apilayer.com/email_verification/check";
 const MACLookUp = "https://mac-address.alldatafeeds.com/api/mac-address/api";
+const genEmail = "https://www.1secmail.com/api/v1/";
 
 module.exports = {
     geoIpv1,
@@ -10,4 +11,5 @@ module.exports = {
     phoneValid,
     validEmail,
     MACLookUp,
+    genEmail,
 }

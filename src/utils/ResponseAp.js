@@ -13,7 +13,7 @@ const jsonResponse = (res, httpStatus = 500, dataResult = [], paginate = {}, msg
   if (paginate instanceof Object && Object.values(paginate).length > 0) {
     data = {
       ...data,
-      pagination: paginate,
+      info: paginate,
     };
   }
 

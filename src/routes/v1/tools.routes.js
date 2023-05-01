@@ -31,4 +31,11 @@ router
     .get(
         ToolsController.MacLookup,
     );
+
+router
+    .route('/gen-email')
+    .get(
+        ToolsController.generateEmail,
+    )
+
 module.exports = router;

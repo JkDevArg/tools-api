@@ -60,6 +60,7 @@ const phoneVerified = CatchAsync(async (req, res) => {
     }
 });
 
+// Email verified
 const emailVerified = CatchAsync(async (req, res) => {
     const email = req.query.email;
     const apiUrl = ApiUrl.validEmail;
@@ -75,6 +76,7 @@ const emailVerified = CatchAsync(async (req, res) => {
     }
 });
 
+// Mac verified
 const MacLookup = CatchAsync(async (req, res) => {
     const mac = req.query.mac;
     const apiUrl = ApiUrl.MACLookUp;
@@ -87,6 +89,19 @@ const MacLookup = CatchAsync(async (req, res) => {
     }
 });
 
+// Gen Email
+const generateEmail = CatchAsync(async (req, res) => {
+    const apiUrl = ApiUrl.genEmail;
+    const count = req.query.count ? `${req.query.count}` : 1;
+    const urlApi = `${apiUrl}?action=genRandomMailbox&count=${count}`;
+
+    try {
+        const resapi = await axios.get(urlApi)
+        return Response.jsonResponse(res, resapi.status, resapi.data, {'site' : 'https://www.1secmail.com/'});
+      } catch (error) {
+        return res.status(500).json({ message: 'Something went wrong' });
+      }
+});
 
 
 module.exports = {
@@ -95,4 +110,5 @@ module.exports = {
     phoneVerified,
     emailVerified,
     MacLookup,
+    generateEmail,
 }

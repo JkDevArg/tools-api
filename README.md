@@ -34,6 +34,8 @@ API_LAYER_KEY -> https://apilayer.com/
 
 ```/v1/tools/mac/44:38:39:ff:ef:57 ```
 
+```/v1/tools/gen-email ``` or ```/v1/tools/gen-email?count=1 ```
+
 # Import Request for Postman
 
 File: API-Tools-Request-POSTMAN.json
