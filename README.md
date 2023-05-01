@@ -1,6 +1,6 @@
 # Tools API
 
-Module required
+Modules required
 
 - Axios
 - Express
@@ -18,13 +18,13 @@ Module required
 
 `npm i`
 
-### Need API key
+# Need API key
 
 API_GEOIP_V2 -> http://api.ipapi.com/api
 
 API_LAYER_KEY -> https://apilayer.com/
 
-### Testing Endpoint
+# Testing Endpoint
 
 http://localhost:3000/v1/tools/phone-verified/1234567890
 
