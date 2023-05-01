@@ -53,7 +53,6 @@ const phoneVerified = CatchAsync(async (req, res) => {
     try {
         const config = { headers: { 'apikey': process.env.API_LAYER_KEY } };
         const resapi = await axios.get(urlApi, config);
-        console.log()
         return Response.jsonResponse(res, resapi.status, resapi.data);
     } catch (error) {
         console.error(error);
@@ -61,8 +60,39 @@ const phoneVerified = CatchAsync(async (req, res) => {
     }
 });
 
+const emailVerified = CatchAsync(async (req, res) => {
+    const email = req.query.email;
+    const apiUrl = ApiUrl.validEmail;
+    const urlApi = `${apiUrl}?${querystring.stringify({email: email})}`;
+    console.log(urlApi)
+    try {
+        const config = { headers: { 'apikey': process.env.API_LAYER_KEY_VALID_EMAIL } };
+        const resapi = await axios.get(urlApi, config);
+        return Response.jsonResponse(res, resapi.status, resapi.data);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Something went wrong' });
+    }
+});
+
+const MacLookup = CatchAsync(async (req, res) => {
+    const mac = req.query.mac;
+    const apiUrl = ApiUrl.MACLookUp;
+
+    try {
+      const resapi = await axios.post(apiUrl, { "macAddress": mac, "not-web-search" : true });
+      return Response.jsonResponse(res, resapi.status, resapi.data);
+    } catch (error) {
+      return res.status(500).json({ message: 'Something went wrong' });
+    }
+});
+
+
+
 module.exports = {
     geoIp,
     geoIpv2,
     phoneVerified,
+    emailVerified,
+    MacLookup,
 }

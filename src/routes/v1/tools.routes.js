@@ -20,4 +20,15 @@ router
         ToolsController.phoneVerified,
     );
 
- module.exports = router;
+router
+    .route('/email-verified')
+    .get(
+        ToolsController.emailVerified,
+    );
+
+router
+    .route('/mac')
+    .get(
+        ToolsController.MacLookup,
+    );
+module.exports = router;
