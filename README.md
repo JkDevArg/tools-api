@@ -18,6 +18,10 @@ Modules required
 
 `npm i`
 
+## Initialized Project
+
+`npm run dev`
+
 # Need API key
 
 API_GEOIP_V2 -> http://api.ipapi.com/api
