@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "961034fb-41d2-4c16-8b17-7909456f545d",
+		"name": "LOCALHOST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25092861"
+	},
+	"item": [
+		{
+			"name": "Geo IP V1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/tools/geo-ip/142.250.0.102",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"tools",
+						"geo-ip",
+						"142.250.0.102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Geo IP V2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/tools/geo-ip-v2/142.250.0.102",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"tools",
+						"geo-ip-v2",
+						"142.250.0.102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VALIDATE PHONE NUMBER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/tools/phone-verified/17015168317",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"tools",
+						"phone-verified",
+						"17015168317"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

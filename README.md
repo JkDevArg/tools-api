@@ -32,3 +32,6 @@ http://localhost:3000/v1/tools/geo-ip-v2/12.12.12.123
 
 http://localhost:3000/v1/tools/geo-ip/12.12.12.123
 
+# Import Request for Postman
+
+File: API-Tools-Request-POSTMAN.json
