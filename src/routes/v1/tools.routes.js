@@ -38,4 +38,10 @@ router
         ToolsController.generateEmail,
     )
 
+router
+    .route('/domain')
+    .get(
+        ToolsController.validateDomain,
+    )
+
 module.exports = router;

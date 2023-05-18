@@ -4,3 +4,4 @@ module.exports.CatchAsync = require('./CatchAsync');
 module.exports.error = require('./error');
 module.exports.ApiUrl = require('./UrlApi');
 module.exports.ValidateIP = require('./ValidateIP');
+module.exports.Dns = require('./Dns');

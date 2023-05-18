@@ -1,6 +1,6 @@
 const axios = require("axios");
 const querystring = require('querystring');
-const { CatchAsync, Response, ApiUrl, ValidateIP } = require('../utils');
+const { CatchAsync, Response, ApiUrl, ValidateIP, Dns } = require('../utils');
 require('dotenv').config()
 
 // IP
@@ -103,6 +103,23 @@ const generateEmail = CatchAsync(async (req, res) => {
       }
 });
 
+//Check Domain
+const validateDomain = CatchAsync(async (req, res) => {
+    const domain = req.query.domain;
+    try {
+        const dnsRecords = await Dns.resolveDomain(domain); // Resuelve el dominio para obtener los registros DNS
+
+        if (dnsRecords.length > 0) {
+            // El dominio existe
+            return res.status(200).json({ message: `El dominio ${domain} existe.` });
+        } else {
+            // El dominio no existe
+            return res.status(400).json({ message: `El dominio ${domain} no existe.` });
+        }
+    } catch (error) {
+        return res.status(500).json({ message: `El dominio ${domain} no existe.` });
+    }
+});
 
 module.exports = {
     geoIp,
@@ -111,4 +128,5 @@ module.exports = {
     emailVerified,
     MacLookup,
     generateEmail,
+    validateDomain,
 }
